@@ -4,7 +4,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
 
-import ma.mahmoud.yasson.entities.Person;
+import ma.mahmoud.yasson.entities.Pojo;
 
 /**
  * Transform a JSON Stream to an Object.
@@ -17,7 +17,11 @@ public class JsonToObject {
 
 	public static void main(String[] args) {
 
-		final String jsonStream = "{\"age\":26,\"firstName\":\"Mahmoud\",\"lastName\":\"LOTFI\"}";
+		final String jsonStream = "{"
+				+ "\"boolean\":true,\"isByte\":25,\"isCalendar\":\"2017-04-16T21:34:35.722+01:00[Africa/Casablanca]\","
+				+ "\"isChar\":\"M\",\"isDate\":\"2017-04-16T21:33:54\",\"isDouble\":123456.52,"
+				+ "\"isFloat\":123456.5,\"isInt\":120012,\"isLocalDate\":\"2017-04-16\","
+				+ "\"isString\":\"Je suis une chaine\"}";
 
 		// CREATE CONFIG
 		JsonbConfig config = new JsonbConfig();
@@ -26,10 +30,10 @@ public class JsonToObject {
 		Jsonb jsonb = JsonbBuilder.create(config);
 
 		// DESERIALIZE
-		Person person = jsonb.fromJson(jsonStream, Person.class);
+		Pojo object = jsonb.fromJson(jsonStream, Pojo.class);
 
 		// DISPALAY OBJECT
 		System.out.println("JSON to Object : \n\n");
-		System.out.println(person);
+		System.out.println(object);
 	}
 }
