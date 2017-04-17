@@ -9,7 +9,6 @@ import java.util.Date;
  * The entity used to do a serialization and deserialization of the JSON stream.
  * 
  * @author mahmoud
- *
  */
 public class Pojo implements Serializable {
 
