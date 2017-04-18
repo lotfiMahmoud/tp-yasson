@@ -21,7 +21,7 @@ public class JsonToObject {
 				+ "\"boolean\":true,\"isByte\":25,\"isCalendar\":\"2017-04-16T21:34:35.722+01:00[Africa/Casablanca]\","
 				+ "\"isChar\":\"M\",\"isDate\":\"2017-04-16T21:33:54\",\"isDouble\":123456.52,"
 				+ "\"isFloat\":123456.5,\"isInt\":120012,\"isLocalDate\":\"2017-04-16\","
-				+ "\"isString\":\"Je suis une chaine\"}";
+				+ "\"isString\":\"Je suis une chaine\",\"comments\":[{\"comment\":\"cmn 1\"},{\"comment\":\"cmn 2\"},{\"comment\":\"cmn 3\"}]}";
 
 		// CREATE CONFIG
 		JsonbConfig config = new JsonbConfig();

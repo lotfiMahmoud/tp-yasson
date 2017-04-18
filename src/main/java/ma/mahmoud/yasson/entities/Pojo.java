@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * The entity used to do a serialization and deserialization of the JSON stream.
@@ -26,6 +27,8 @@ public class Pojo implements Serializable {
 	private Date isDate;
 	private Calendar isCalendar;
 	private LocalDate isLocalDate;
+
+	private List<Comment> comments;
 
 	// DEFAULT CONSTRUCTOR
 	public Pojo() {
@@ -112,12 +115,20 @@ public class Pojo implements Serializable {
 		this.isLocalDate = isLocalDate;
 	}
 
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 	// TO STRING
 	@Override
 	public String toString() {
 		return "Pojo [isInt=" + isInt + ", isFloat=" + isFloat + ", isDouble=" + isDouble + ", isByte=" + isByte
 				+ ", isChar=" + isChar + ", isBoolean=" + isBoolean + ", isString=" + isString + ", isDate=" + isDate
-				+ ", isCalendar=" + isCalendar + ", isLocalDate=" + isLocalDate + "]";
+				+ ", isCalendar=" + isCalendar + ", isLocalDate=" + isLocalDate + ", comments=" + comments + "]";
 	}
 
 }
