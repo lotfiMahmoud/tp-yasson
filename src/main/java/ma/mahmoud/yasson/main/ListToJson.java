@@ -10,6 +10,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
 
+import ma.mahmoud.yasson.entities.Comment;
 import ma.mahmoud.yasson.entities.Pojo;
 
 /**
@@ -23,6 +24,7 @@ public class ListToJson {
 
 	public static void main(String[] args) {
 		// CREATE TWO OBJECT
+		// p1 with list of comment
 		Pojo p1 = new Pojo();
 		p1.setIsInt(120012);
 		p1.setIsByte((byte) 25);
@@ -36,6 +38,14 @@ public class ListToJson {
 		p1.setIsCalendar(Calendar.getInstance());
 		p1.setIsLocalDate(LocalDate.now());
 
+		List<Comment> commentsP1 = new ArrayList<>();
+		commentsP1.add(new Comment("cmn 1"));
+		commentsP1.add(new Comment("cmn 2"));
+		commentsP1.add(new Comment("cmn 3"));
+
+		p1.setComments(commentsP1);
+
+		// p2 without list of comment
 		Pojo p2 = new Pojo();
 		p2.setIsInt(99);
 		p2.setIsByte((byte) 10);

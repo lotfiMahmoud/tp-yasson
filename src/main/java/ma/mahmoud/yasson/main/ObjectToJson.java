@@ -1,8 +1,10 @@
 package ma.mahmoud.yasson.main;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Transform an Object to JSON.
@@ -15,6 +17,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
 
+import ma.mahmoud.yasson.entities.Comment;
 import ma.mahmoud.yasson.entities.Pojo;
 
 public class ObjectToJson {
@@ -34,6 +37,13 @@ public class ObjectToJson {
 		object.setIsCalendar(Calendar.getInstance());
 		object.setIsLocalDate(LocalDate.now());
 
+		List<Comment> commentsP1 = new ArrayList<>();
+		commentsP1.add(new Comment("cmn 1"));
+		commentsP1.add(new Comment("cmn 2"));
+		commentsP1.add(new Comment("cmn 3"));
+
+		object.setComments(commentsP1);
+
 		// CREATE CONFIG
 		JsonbConfig config = new JsonbConfig();
 		config.withNullValues(true);
@@ -43,7 +53,7 @@ public class ObjectToJson {
 		// specify the format in the withDateFormat method by specifying the
 		// format and the locality.
 		// Uncomment the next line to see the result.
-		
+
 		// config.withDateFormat("dd/MM/yyyy", Locale.FRANCE);
 
 		Jsonb jsonb = JsonbBuilder.create(config);
